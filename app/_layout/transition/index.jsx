@@ -27,7 +27,7 @@ export function Transition({ children }) {
   return (
     <div key={pathname} className='overflow-hidden'>
       <AnimatePresence mode='wait'>
-        {isLoading ? <Preloader /> : null}
+        {isLoading ? <Preloader pathname={pathname} /> : null}
       </AnimatePresence>
       {children}
     </div>

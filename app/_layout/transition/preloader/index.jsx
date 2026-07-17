@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import { motion } from 'framer-motion';
-import { Dot } from 'lucide-react';
+
 
 import { Center } from '@/components';
 import { preloaderWords } from '@/data';
@@ -13,7 +13,7 @@ import { fade, slideUp } from './variants';
 
 const MotionComponent = motion(Center);
 
-export function Preloader() {
+export function Preloader({ pathname }) {
   const [index, setIndex] = useState(0);
   const { width, height } = useDimensions();
 
@@ -59,8 +59,16 @@ export function Preloader() {
             initial='initial'
             animate='enter'
           >
-            <Dot size={48} className='me-3' />
-            <p>{preloaderWords[index]}</p>
+
+            <p>
+              {pathname === '/'
+                ? preloaderWords[index]
+                : pathname
+                    .split('/')
+                    .pop()
+                    .replace(/-/g, ' ')
+                    .replace(/\b\w/g, (c) => c.toUpperCase()) || 'Home'}
+            </p>
           </MotionComponent>
           <motion.svg className='absolute top-0 -z-10 h-[calc(100%+300px)] w-full'>
             <motion.path
