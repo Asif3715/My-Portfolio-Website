@@ -20,30 +20,31 @@ const socialLinks = [
 
 export function ContactDetails() {
   return (
-    <div className='flex flex-col gap-12'>
+    <div className='flex flex-col gap-12 md:pl-16'>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className='w-full max-w-sm'
+        className='mb-8'
       >
-        <Image
-          src='/asif5.jpeg'
-          width={400}
-          height={400}
-          className='h-auto w-full rounded-lg object-cover'
-          alt='Asif Khan'
-        />
+        <div className='relative size-32 overflow-hidden rounded-full border-2 border-white/20 md:size-48'>
+          <Image
+            src='/asif5.jpeg'
+            fill
+            className='object-cover grayscale transition-all duration-500 hover:grayscale-0'
+            alt='Asif Khan'
+          />
+        </div>
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h5 className='mb-4 text-sm uppercase tracking-wider text-muted-foreground'>
+        <h5 className='mb-4 text-xs font-semibold uppercase tracking-widest text-white/50'>
           Contact Details
         </h5>
         <ul className='flex flex-col gap-3'>
@@ -51,9 +52,10 @@ export function ContactDetails() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className='text-lg decoration-muted-foreground/50 underline-offset-4 transition-colors hover:underline hover:decoration-background'
+                className='group relative text-xl font-medium transition-colors hover:text-white/80 md:text-2xl'
               >
                 {link.text}
+                <span className='absolute -bottom-1 left-0 h-px w-0 bg-white transition-all duration-300 group-hover:w-full' />
               </a>
             </li>
           ))}
@@ -61,30 +63,30 @@ export function ContactDetails() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <h5 className='mb-4 text-sm uppercase tracking-wider text-muted-foreground'>
+        <h5 className='mb-4 text-xs font-semibold uppercase tracking-widest text-white/50'>
           Business Details
         </h5>
         <ul className='flex flex-col gap-2'>
           {businessDetails.map((detail) => (
             <li key={detail}>
-              <p className='text-lg'>{detail}</p>
+              <p className='text-xl text-white/80 md:text-2xl'>{detail}</p>
             </li>
           ))}
         </ul>
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h5 className='mb-4 text-sm uppercase tracking-wider text-muted-foreground'>
+        <h5 className='mb-4 text-xs font-semibold uppercase tracking-widest text-white/50'>
           Socials
         </h5>
         <ul className='flex flex-col gap-3'>
@@ -94,9 +96,10 @@ export function ContactDetails() {
                 href={link.href}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-lg decoration-muted-foreground/50 underline-offset-4 transition-colors hover:underline hover:decoration-background'
+                className='group relative text-xl font-medium transition-colors hover:text-white/80 md:text-2xl'
               >
                 {link.text}
+                <span className='absolute -bottom-1 left-0 h-px w-0 bg-white transition-all duration-300 group-hover:w-full' />
               </a>
             </li>
           ))}

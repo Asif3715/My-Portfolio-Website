@@ -31,22 +31,24 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='flex flex-col gap-10'>
+    <form onSubmit={handleSubmit} className='flex flex-col gap-12 md:gap-16'>
       {fields.map((field, i) => (
         <motion.div
           key={field.id}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.1 }}
-          className='flex flex-col gap-2'
+          transition={{ duration: 0.6, delay: i * 0.1 }}
+          className='group relative flex flex-col gap-4 border-b border-white/20 pb-4'
         >
-          <span className='text-sm text-muted-foreground'>
-            {String(i + 1).padStart(2, '0')}
-          </span>
-          <label htmlFor={field.id} className='text-lg'>
-            {field.label}
-          </label>
+          <div className='flex items-center gap-6'>
+            <span className='text-sm font-medium text-white/40'>
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <label htmlFor={field.id} className='text-xl text-white md:text-3xl'>
+              {field.label}
+            </label>
+          </div>
           <input
             type={field.type}
             id={field.id}
@@ -55,34 +57,38 @@ export function ContactForm() {
             onChange={handleChange}
             placeholder={field.placeholder}
             required
-            className='border-b border-muted-foreground/30 bg-transparent py-3 text-lg transition-colors placeholder:text-muted-foreground/50 focus:border-background focus:outline-none'
+            className='w-full bg-transparent py-2 pl-12 text-lg text-white transition-colors placeholder:text-white/20 focus:outline-none md:text-2xl'
           />
+          <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-500 group-focus-within:w-full" />
         </motion.div>
       ))}
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: fields.length * 0.1 }}
-        className='flex flex-col gap-2'
+        transition={{ duration: 0.6, delay: fields.length * 0.1 }}
+        className='group relative flex flex-col gap-4 border-b border-white/20 pb-4'
       >
-        <span className='text-sm text-muted-foreground'>
-          {String(fields.length + 1).padStart(2, '0')}
-        </span>
-        <label htmlFor='message' className='text-lg'>
-          Your message
-        </label>
+        <div className='flex items-center gap-6'>
+          <span className='text-sm font-medium text-white/40'>
+            {String(fields.length + 1).padStart(2, '0')}
+          </span>
+          <label htmlFor='message' className='text-xl text-white md:text-3xl'>
+            Your message
+          </label>
+        </div>
         <textarea
           id='message'
           name='message'
           value={form.message}
           onChange={handleChange}
-          rows={6}
+          rows={5}
           required
           placeholder='Hello Asif, can you help me with ... *'
-          className='resize-none border-b border-muted-foreground/30 bg-transparent py-3 text-lg transition-colors placeholder:text-muted-foreground/50 focus:border-background focus:outline-none'
+          className='w-full resize-none bg-transparent py-4 pl-12 text-lg text-white transition-colors placeholder:text-white/20 focus:outline-none md:text-2xl'
         />
+        <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-500 group-focus-within:w-full" />
       </motion.div>
 
       <motion.div
@@ -90,9 +96,9 @@ export function ContactForm() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: (fields.length + 1) * 0.1 }}
-        className='mt-4'
+        className='mt-8 flex justify-start'
       >
-        <MagneticButton variant='primary' size='xl'>
+        <MagneticButton variant='primary' size='xl' className="rounded-full !px-12 !py-8 text-xl">
           Send it!
         </MagneticButton>
       </motion.div>
