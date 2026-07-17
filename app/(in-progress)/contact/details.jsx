@@ -32,7 +32,7 @@ export function ContactDetails() {
           src='/asif5.jpeg'
           width={400}
           height={400}
-          className='rounded-lg object-cover w-full h-auto'
+          className='h-auto w-full rounded-lg object-cover'
           alt='Asif Khan'
         />
       </motion.div>
@@ -43,7 +43,7 @@ export function ContactDetails() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h5 className='text-sm uppercase tracking-wider text-muted-foreground mb-4'>
+        <h5 className='mb-4 text-sm uppercase tracking-wider text-muted-foreground'>
           Contact Details
         </h5>
         <ul className='flex flex-col gap-3'>
@@ -51,7 +51,7 @@ export function ContactDetails() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className='text-lg hover:underline underline-offset-4 decoration-muted-foreground/50 hover:decoration-background transition-colors'
+                className='text-lg decoration-muted-foreground/50 underline-offset-4 transition-colors hover:underline hover:decoration-background'
               >
                 {link.text}
               </a>
@@ -66,7 +66,7 @@ export function ContactDetails() {
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <h5 className='text-sm uppercase tracking-wider text-muted-foreground mb-4'>
+        <h5 className='mb-4 text-sm uppercase tracking-wider text-muted-foreground'>
           Business Details
         </h5>
         <ul className='flex flex-col gap-2'>
@@ -84,7 +84,7 @@ export function ContactDetails() {
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h5 className='text-sm uppercase tracking-wider text-muted-foreground mb-4'>
+        <h5 className='mb-4 text-sm uppercase tracking-wider text-muted-foreground'>
           Socials
         </h5>
         <ul className='flex flex-col gap-3'>
@@ -94,7 +94,7 @@ export function ContactDetails() {
                 href={link.href}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-lg hover:underline underline-offset-4 decoration-muted-foreground/50 hover:decoration-background transition-colors'
+                className='text-lg decoration-muted-foreground/50 underline-offset-4 transition-colors hover:underline hover:decoration-background'
               >
                 {link.text}
               </a>

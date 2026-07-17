@@ -11,7 +11,7 @@ export function CTA() {
   return (
     <section className='container relative py-32'>
       <div className='flex flex-col items-center text-center'>
-        <h2 className='text-4xl md:text-6xl font-bold mb-8'>
+        <h2 className='mb-8 text-4xl font-bold md:text-6xl'>
           <ParallaxReveal paragraph={phrase} />
         </h2>
         

@@ -52,20 +52,20 @@ export default function Work() {
     <Transition>
       <Navbar />
       <main className='container mx-auto px-6 py-20'>
-        <h1 className='text-5xl font-bold mb-12'>Projects</h1>
+        <h1 className='mb-12 text-5xl font-bold'>Projects</h1>
         
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
           {projects.map((project) => (
-            <div key={project.title} className='border border-border rounded-lg p-6 hover:shadow-lg transition-shadow'>
-              <h2 className='text-2xl font-medium mb-2'>{project.title}</h2>
-              <p className='text-muted-foreground mb-3'>{project.desc}</p>
-              <p className='text-sm text-muted-foreground mb-4'>{project.tech}</p>
+            <div key={project.title} className='rounded-lg border border-border p-6 transition-shadow hover:shadow-lg'>
+              <h2 className='mb-2 text-2xl font-medium'>{project.title}</h2>
+              <p className='mb-3 text-muted-foreground'>{project.desc}</p>
+              <p className='mb-4 text-sm text-muted-foreground'>{project.tech}</p>
               <div className='flex gap-4'>
                 <a 
                   href={project.github} 
                   target='_blank' 
                   rel='noopener' 
-                  className='text-foreground font-medium hover:underline'
+                  className='font-medium text-foreground hover:underline'
                 >
                   GitHub
                 </a>
@@ -74,7 +74,7 @@ export default function Work() {
                     href={project.live} 
                     target='_blank' 
                     rel='noopener' 
-                    className='text-foreground font-medium hover:underline'
+                    className='font-medium text-foreground hover:underline'
                   >
                     Live Demo
                   </a>

@@ -11,8 +11,8 @@ const skills = [
 
 export function Skills() {
   return (
-    <section className='py-20 overflow-hidden bg-background'>
-      <div className='container mx-auto px-6 mb-12'>
+    <section className='overflow-hidden bg-background py-20'>
+      <div className='container mx-auto mb-12 px-6'>
         <h2 className='text-sm uppercase tracking-wider text-muted-foreground'>Tech Stack</h2>
       </div>
       
@@ -34,7 +34,7 @@ export function Skills() {
           {[...skills, ...skills].map((skill, index) => (
             <span
               key={index}
-              className='text-6xl md:text-8xl font-bold text-muted-foreground/20 hover:text-foreground transition-colors duration-300 cursor-default'
+              className='cursor-default text-6xl font-bold text-muted-foreground/20 transition-colors duration-300 hover:text-foreground md:text-8xl'
             >
               {skill}
             </span>

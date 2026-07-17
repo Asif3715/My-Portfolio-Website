@@ -55,7 +55,7 @@ export function ContactForm() {
             onChange={handleChange}
             placeholder={field.placeholder}
             required
-            className='bg-transparent border-b border-muted-foreground/30 py-3 text-lg placeholder:text-muted-foreground/50 focus:outline-none focus:border-background transition-colors'
+            className='border-b border-muted-foreground/30 bg-transparent py-3 text-lg transition-colors placeholder:text-muted-foreground/50 focus:border-background focus:outline-none'
           />
         </motion.div>
       ))}
@@ -81,7 +81,7 @@ export function ContactForm() {
           rows={6}
           required
           placeholder='Hello Asif, can you help me with ... *'
-          className='bg-transparent border-b border-muted-foreground/30 py-3 text-lg placeholder:text-muted-foreground/50 focus:outline-none focus:border-background transition-colors resize-none'
+          className='resize-none border-b border-muted-foreground/30 bg-transparent py-3 text-lg transition-colors placeholder:text-muted-foreground/50 focus:border-background focus:outline-none'
         />
       </motion.div>
 
