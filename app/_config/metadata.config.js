@@ -16,6 +16,11 @@ export const rootMetadata = {
   ],
   creator: 'Asif Khan',
   publisher: 'Asif Khan',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Asif Khan',
