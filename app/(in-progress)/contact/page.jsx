@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 import { Navbar, Transition } from '@/layout';
 
@@ -21,17 +20,7 @@ export default function Contact() {
             className='mb-16 md:mb-24'
           >
             <h1 className='text-[clamp(2.5em,6vw,5em)] leading-tight font-bold'>
-              <span className='flex items-center gap-4 flex-wrap'>
-                Let&apos;s start a
-                <Image
-                  src='/asif5.jpeg'
-                  width={80}
-                  height={80}
-                  className='rounded-full object-cover'
-                  alt='Asif Khan'
-                />
-              </span>
-              <span>project together</span>
+              Let&apos;s start a project together
             </h1>
           </motion.div>
 

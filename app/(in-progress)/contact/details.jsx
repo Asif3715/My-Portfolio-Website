@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const contactLinks = [
   { label: 'Email', href: 'mailto:tanoli3715@gmail.com', text: 'tanoli3715@gmail.com' },
@@ -20,6 +21,22 @@ const socialLinks = [
 export function ContactDetails() {
   return (
     <div className='flex flex-col gap-12'>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className='w-full max-w-sm'
+      >
+        <Image
+          src='/asif5.jpeg'
+          width={400}
+          height={400}
+          className='rounded-lg object-cover w-full h-auto'
+          alt='Asif Khan'
+        />
+      </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
