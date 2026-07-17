@@ -3,6 +3,7 @@
 import { forwardRef } from 'react';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 import { Center } from '@/components';
 import { thumbnailOptions } from '@/data';
@@ -16,13 +17,22 @@ export const ThumbnailModal = forwardRef(
    * @param {import('react').ForwardedRef<HTMLElement>} ref
    */
   function ThumbnailModal({ variants, active, index, ...props }, ref) {
-    const items = thumbnailOptions.map(({ title, category, color }) => {
+    const items = thumbnailOptions.map(({ title, category, image }) => {
       const id = randomId();
       return (
         <Center key={id} className='h-full w-full'>
-          <div className={`w-full h-full ${color} flex flex-col items-center justify-center text-white p-4`}>
-            <h3 className='text-xl font-bold text-center'>{title}</h3>
-            <p className='text-sm opacity-80 text-center mt-1'>{category}</p>
+          <div className='relative w-full h-full overflow-hidden'>
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className='object-cover'
+              sizes='320px'
+            />
+            <div className='absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-white p-4'>
+              <h3 className='text-xl font-bold text-center'>{title}</h3>
+              <p className='text-sm opacity-80 text-center mt-1'>{category}</p>
+            </div>
           </div>
         </Center>
       );
