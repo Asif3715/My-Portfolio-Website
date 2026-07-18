@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+
 import { MagneticButton, ParallaxFade, ParallaxReveal } from '@/components';
 
 import { Title, Wrapper } from './index.styled';
@@ -21,7 +22,7 @@ export function Description() {
 
         <div className='basis-7/12 lg:basis-3/12'>
           <ParallaxFade>
-            <p className='mt-2 text-base lg:text-lg text-balance'>
+            <p className='mt-2 text-base text-balance lg:text-lg'>
               Data Science student at NUST with hands-on experience building ML, NLP, and analytics systems.
             </p>
           </ParallaxFade>

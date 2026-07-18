@@ -139,7 +139,7 @@ export default function About() {
               >
                 <motion.div
                   style={{ y }}
-                  className='absolute -inset-y-[15%] h-[130%] w-full'
+                  className='absolute inset-y-[-15%] h-[130%] w-full'
                 >
                   <Image
                     src='/pcs.png'
@@ -211,7 +211,7 @@ export default function About() {
               >
                 <motion.div
                   style={{ y: y2 }}
-                  className='absolute -inset-y-[15%] h-[130%] w-full'
+                  className='absolute inset-y-[-15%] h-[130%] w-full'
                 >
                   <Image
                     src='/nust.png'
@@ -234,7 +234,7 @@ export default function About() {
               >
                 <motion.div
                   style={{ y: y3 }}
-                  className='absolute -inset-y-[15%] h-[130%] w-full'
+                  className='absolute inset-y-[-15%] h-[130%] w-full'
                 >
                   <Image
                     src='/hobbies.png'
