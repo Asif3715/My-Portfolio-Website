@@ -15,7 +15,7 @@ export function Skills() {
       <div className='container mx-auto mb-12 px-6'>
         <h2 className='text-sm uppercase tracking-wider text-muted-foreground'>Tech Stack</h2>
       </div>
-      
+
       <div className='relative'>
         <motion.div
           className='flex gap-8 whitespace-nowrap'

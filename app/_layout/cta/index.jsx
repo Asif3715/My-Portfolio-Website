@@ -14,7 +14,7 @@ export function CTA() {
         <h2 className='mb-8 text-4xl font-bold md:text-6xl'>
           <ParallaxReveal paragraph={phrase} />
         </h2>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
