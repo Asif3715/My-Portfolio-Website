@@ -41,38 +41,7 @@ const experience = [
   },
 ];
 
-const skills = [
-  {
-    category: 'Languages',
-    items: 'Python, SQL, JavaScript',
-    colSpan: 'md:col-span-1',
-  },
-  {
-    category: 'ML & Deep Learning',
-    items: 'PyTorch, TensorFlow, Scikit-learn, HuggingFace',
-    colSpan: 'md:col-span-2',
-  },
-  {
-    category: 'LLMs & NLP',
-    items: 'LangChain, RAG, Prompt Engineering, spaCy',
-    colSpan: 'md:col-span-2',
-  },
-  {
-    category: 'Data & BI',
-    items: 'Pandas, Power BI, DAX, EDA',
-    colSpan: 'md:col-span-1',
-  },
-  {
-    category: 'Backend & Web',
-    items: 'FastAPI, React, Node.js, Streamlit',
-    colSpan: 'md:col-span-1',
-  },
-  {
-    category: 'Databases & Tools',
-    items: 'PostgreSQL, Qdrant, Docker, Git',
-    colSpan: 'md:col-span-2',
-  },
-];
+
 
 function Marquee() {
   return (
@@ -105,6 +74,24 @@ export default function About() {
 
   const y = useTransform(scrollYProgress, [0, 1], [-100, 100]);
 
+  /** @type {import('react').MutableRefObject<HTMLElement>} */
+  const container2 = useRef(null);
+  const { scrollYProgress: scrollYProgress2 } = useScroll({
+    target: container2,
+    offset: ['start end', 'end start'],
+  });
+
+  const y2 = useTransform(scrollYProgress2, [0, 1], [-100, 100]);
+
+  /** @type {import('react').MutableRefObject<HTMLElement>} */
+  const container3 = useRef(null);
+  const { scrollYProgress: scrollYProgress3 } = useScroll({
+    target: container3,
+    offset: ['start end', 'end start'],
+  });
+
+  const y3 = useTransform(scrollYProgress3, [0, 1], [-100, 100]);
+
   return (
     <Transition>
       <Navbar />
@@ -120,9 +107,9 @@ export default function About() {
                 ease: [0.33, 1, 0.68, 1],
                 delay: 0.2,
               }}
-              className='text-[14vw] font-bold uppercase leading-[0.85] tracking-tighter md:text-[9vw]'
+              className='text-[14vw] font-bold uppercase leading-[0.85] tracking-tighter md:text-[11vw]'
             >
-              Building
+              About
             </motion.h1>
           </div>
           <div className='overflow-hidden'>
@@ -134,31 +121,18 @@ export default function About() {
                 ease: [0.33, 1, 0.68, 1],
                 delay: 0.3,
               }}
-              className='ml-0 text-[14vw] font-bold uppercase leading-[0.85] tracking-tighter md:ml-[10%] md:text-[9vw]'
+              className='ml-0 text-[14vw] font-bold uppercase leading-[0.85] tracking-tighter md:ml-[10%] md:text-[11vw]'
             >
-              Intelligent
-            </motion.h1>
-          </div>
-          <div className='overflow-hidden'>
-            <motion.h1
-              initial={{ y: '100%' }}
-              animate={{ y: 0 }}
-              transition={{
-                duration: 0.8,
-                ease: [0.33, 1, 0.68, 1],
-                delay: 0.4,
-              }}
-              className='ml-0 text-[14vw] font-bold uppercase leading-[0.85] tracking-tighter md:ml-[20%] md:text-[9vw]'
-            >
-              Systems
+              Me
             </motion.h1>
           </div>
         </section>
 
         {/* IMAGE & SUMMARY PARALLAX */}
-        <section className='container mx-auto mt-10 border-t border-border px-6 py-20'>
-          <div className='flex flex-col gap-12 md:flex-row md:gap-24'>
-            <div className='w-full md:w-1/3'>
+        <section className='container mx-auto mt-10 flex flex-col gap-32 border-t border-border px-6 py-20'>
+          {/* Paragraph 1 */}
+          <div className='flex flex-col gap-12 md:flex-row md:items-center md:gap-24'>
+            <div className='w-full md:w-5/12'>
               <div
                 className='relative h-[60vh] w-full overflow-hidden rounded-xl'
                 ref={container}
@@ -168,31 +142,120 @@ export default function About() {
                   className='absolute -inset-y-[15%] h-[130%] w-full'
                 >
                   <Image
-                    src='/asif5.jpeg'
-                    alt='Asif Khan'
+                    src='/pcs.png'
+                    alt='PAF College Sargodha'
                     fill
                     className='object-cover'
-                    sizes='(max-width: 768px) 100vw, 33vw'
+                    sizes='(max-width: 768px) 100vw, 50vw'
                   />
                 </motion.div>
               </div>
             </div>
 
-            <div className='flex w-full items-center md:w-2/3'>
+            <div className='flex w-full items-center md:w-7/12'>
               <motion.p
                 initial='initial'
                 whileInView='enter'
                 viewport={{ once: true, margin: '-10%' }}
                 variants={slideUpWithOpacity}
-                className='text-2xl font-medium leading-tight md:text-4xl md:leading-snug'
+                className='text-xl font-light leading-relaxed text-foreground/80 md:text-2xl md:leading-loose'
               >
-                I am a Data Science student at NUST with hands-on experience
-                building machine learning, NLP, and data analytics systems.
+                My journey of discipline and leadership began at PAF College
+                Sargodha, where I joined in 2017 as an 8th-grade cadet and spent
+                five memorable years completing my Matriculation and F.Sc.
+                During my time there, I earned several distinctions, including
+                the Badge of Excellence and multiple athletics medals. Beyond
+                academics and sports, I had the privilege of serving as House
+                Captain, an experience that strengthened my leadership,
+                teamwork, and sense of responsibility—qualities that continue to
+                shape both my personal and professional life today.
+              </motion.p>
+            </div>
+          </div>
+
+          {/* Paragraph 2 */}
+          <div className='flex flex-col-reverse gap-12 md:flex-row md:items-center md:gap-24'>
+            <div className='flex w-full items-center md:w-7/12'>
+              <motion.p
+                initial='initial'
+                whileInView='enter'
+                viewport={{ once: true, margin: '-10%' }}
+                variants={slideUpWithOpacity}
+                className='text-xl font-light leading-relaxed text-foreground/80 md:text-2xl md:leading-loose'
+              >
+                I am currently a{' '}
+                <strong className='font-medium text-foreground'>
+                  final-year BS Data Science student at the School of Electrical
+                  Engineering and Computer Science (SEECS), National University
+                  of Sciences and Technology (NUST)
+                </strong>
+                . Throughout my academic journey, I have gained hands-on
+                experience in machine learning, deep learning, natural language
+                processing, and data analytics by building intelligent,
+                data-driven solutions.
                 <br />
                 <br />
-                My focus lies in developing full-stack AI applications, deep
-                learning pipelines, and transforming raw data into actionable
-                business intelligence.
+                My interests lie in developing end-to-end AI applications,
+                designing scalable machine learning pipelines, and transforming
+                raw data into meaningful insights that solve real-world
+                problems. I am passionate about continuously learning emerging
+                AI technologies and applying them to create practical, impactful
+                solutions.
+              </motion.p>
+            </div>
+
+            <div className='w-full md:w-5/12'>
+              <div
+                className='relative h-[60vh] w-full overflow-hidden rounded-xl'
+                ref={container2}
+              >
+                <motion.div
+                  style={{ y: y2 }}
+                  className='absolute -inset-y-[15%] h-[130%] w-full'
+                >
+                  <Image
+                    src='/nust.png'
+                    alt='NUST'
+                    fill
+                    className='object-cover'
+                    sizes='(max-width: 768px) 100vw, 50vw'
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </div>
+
+          {/* Paragraph 3 */}
+          <div className='flex flex-col gap-12 md:flex-row md:items-center md:gap-24'>
+            <div className='w-full md:w-5/12'>
+              <div
+                className='relative h-[60vh] w-full overflow-hidden rounded-xl'
+                ref={container3}
+              >
+                <motion.div
+                  style={{ y: y3 }}
+                  className='absolute -inset-y-[15%] h-[130%] w-full'
+                >
+                  <Image
+                    src='/hobbies.png'
+                    alt='Hobbies'
+                    fill
+                    className='object-cover'
+                    sizes='(max-width: 768px) 100vw, 50vw'
+                  />
+                </motion.div>
+              </div>
+            </div>
+
+            <div className='flex w-full items-center md:w-7/12'>
+              <motion.p
+                initial='initial'
+                whileInView='enter'
+                viewport={{ once: true, margin: '-10%' }}
+                variants={slideUpWithOpacity}
+                className='text-xl font-light leading-relaxed text-foreground/80 md:text-2xl md:leading-loose'
+              >
+                Beyond academics and technology, I have always been passionate about sports and believe they have played a vital role in shaping my discipline, resilience, and teamwork. I enjoy playing <strong className='font-medium text-foreground'>hockey, football, and squash</strong>, and I actively participated in various athletic events throughout my school years. Outside the field, I enjoy <strong className='font-medium text-foreground'>calligraphy, declamation, reading, and table tennis</strong>. These interests have helped me develop creativity, confidence, and effective communication skills while maintaining a healthy balance between personal growth and professional ambitions.
               </motion.p>
             </div>
           </div>
@@ -207,35 +270,40 @@ export default function About() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className='mb-16 text-sm font-semibold uppercase tracking-wider text-muted-foreground'
+            className='mb-12 text-sm font-semibold uppercase tracking-wider text-muted-foreground'
           >
             01 / Experience
           </motion.div>
 
-          <div className='flex flex-col border-t border-border'>
+          <div className='grid grid-cols-1 gap-6'>
             {experience.map((exp, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className='group flex flex-col border-b border-border py-10 transition-colors duration-500 hover:bg-secondary/20 md:flex-row'
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                whileHover={{ scale: 0.98 }}
+                className='flex flex-col justify-between rounded-3xl border border-border bg-secondary/10 p-8 backdrop-blur-sm md:flex-row md:items-center'
               >
-                <div className='mb-4 w-full md:mb-0 md:w-1/4'>
-                  <span className='text-muted-foreground'>{exp.year}</span>
+                <div className='mb-6 md:mb-0 md:w-1/4'>
+                  <span className='inline-block rounded-full border border-border/50 bg-background/50 px-4 py-2 text-sm text-muted-foreground'>
+                    {exp.year}
+                  </span>
                 </div>
                 <div className='flex w-full flex-col justify-between md:w-3/4 md:flex-row'>
-                  <div className='mb-4 md:mb-0 md:w-1/2 md:pr-8'>
-                    <h3 className='mb-2 text-2xl font-medium md:text-4xl'>
+                  <div className='mb-4 md:mb-0 md:w-5/12 md:pr-8'>
+                    <h3 className='mb-2 text-2xl font-medium md:text-3xl'>
                       {exp.title}
                     </h3>
-                    <span className='text-sm uppercase tracking-wider text-muted-foreground'>
+                    <span className='text-sm uppercase tracking-wider text-foreground/70'>
                       {exp.company}
                     </span>
                   </div>
-                  <div className='md:w-1/2'>
-                    <p className='text-lg text-muted-foreground'>{exp.desc}</p>
+                  <div className='md:w-7/12'>
+                    <p className='text-base leading-relaxed text-muted-foreground md:text-lg'>
+                      {exp.desc}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -249,55 +317,13 @@ export default function About() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className='mb-16 text-sm font-semibold uppercase tracking-wider text-muted-foreground'
+            className='mb-12 text-sm font-semibold uppercase tracking-wider text-muted-foreground'
           >
             02 / Education
           </motion.div>
 
-          <div className='flex flex-col border-t border-border'>
+          <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
             {education.map((edu, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className='group flex flex-col border-b border-border py-10 transition-colors duration-500 hover:bg-secondary/20 md:flex-row'
-              >
-                <div className='mb-4 w-full md:mb-0 md:w-1/4'>
-                  <span className='text-muted-foreground'>{edu.year}</span>
-                </div>
-                <div className='flex w-full flex-col justify-between md:w-3/4 md:flex-row'>
-                  <div className='mb-4 md:mb-0 md:w-1/2 md:pr-8'>
-                    <h3 className='mb-2 text-2xl font-medium md:text-3xl'>
-                      {edu.institution}
-                    </h3>
-                    <span className='text-sm uppercase tracking-wider text-muted-foreground'>
-                      {edu.location}
-                    </span>
-                  </div>
-                  <div className='flex items-center md:w-1/2'>
-                    <p className='text-xl'>{edu.title}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
-        {/* SKILLS BENTO BOX */}
-        <section className='container mx-auto px-6 py-32'>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className='mb-16 text-sm font-semibold uppercase tracking-wider text-muted-foreground'
-          >
-            03 / Expertise
-          </motion.div>
-
-          <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
-            {skills.map((skill, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -305,14 +331,26 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ scale: 0.98 }}
-                className={`flex flex-col justify-between rounded-3xl border border-border bg-secondary/10 p-8 backdrop-blur-sm ${skill.colSpan}`}
+                className='flex flex-col justify-between rounded-3xl border border-border bg-secondary/10 p-8 backdrop-blur-sm'
               >
-                <h3 className='mb-8 text-xl font-medium text-foreground/80 md:text-2xl'>
-                  {skill.category}
-                </h3>
-                <p className='text-lg leading-relaxed text-muted-foreground md:text-xl'>
-                  {skill.items}
-                </p>
+                <div className='mb-6'>
+                  <span className='inline-block rounded-full border border-border/50 bg-background/50 px-4 py-2 text-sm text-muted-foreground'>
+                    {edu.year}
+                  </span>
+                </div>
+                <div>
+                  <h3 className='mb-4 text-2xl font-medium md:text-3xl'>
+                    {edu.title}
+                  </h3>
+                  <div className='flex flex-col gap-2'>
+                    <span className='text-lg text-foreground/80'>
+                      {edu.institution}
+                    </span>
+                    <span className='text-sm uppercase tracking-wider text-muted-foreground'>
+                      {edu.location}
+                    </span>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
