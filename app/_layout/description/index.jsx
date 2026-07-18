@@ -2,8 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Balancer from 'react-wrap-balancer';
-
 import { MagneticButton, ParallaxFade, ParallaxReveal } from '@/components';
 
 import { Title, Wrapper } from './index.styled';
@@ -23,9 +21,9 @@ export function Description() {
 
         <div className='basis-7/12 lg:basis-3/12'>
           <ParallaxFade>
-            <Balancer as='p' className='mt-2 text-base lg:text-lg'>
+            <p className='mt-2 text-base lg:text-lg text-balance'>
               Data Science student at NUST with hands-on experience building ML, NLP, and analytics systems.
-            </Balancer>
+            </p>
           </ParallaxFade>
         </div>
 
