@@ -4,7 +4,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const contactLinks = [
-  { label: 'Email', href: 'mailto:tanoli3715@gmail.com', text: 'tanoli3715@gmail.com' },
+  {
+    label: 'Email',
+    href: 'mailto:tanoli3715@gmail.com',
+    text: 'tanoli3715@gmail.com',
+  },
   { label: 'Phone', href: 'tel:+923079966012', text: '+92 307 9966012' },
 ];
 
@@ -14,7 +18,11 @@ const businessDetails = [
 ];
 
 const socialLinks = [
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/asif-khan-0ba826240', text: 'LinkedIn' },
+  {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/asif-khan-0ba826240',
+    text: 'LinkedIn',
+  },
   { label: 'GitHub', href: 'https://github.com/Asif3715', text: 'GitHub' },
 ];
 
@@ -48,7 +56,7 @@ export function ContactDetails() {
           Contact Details
         </h5>
         <ul className='flex flex-col gap-3'>
-          {contactLinks.map((link) => (
+          {contactLinks.map(link => (
             <li key={link.label}>
               <a
                 href={link.href}
@@ -72,7 +80,7 @@ export function ContactDetails() {
           Business Details
         </h5>
         <ul className='flex flex-col gap-2'>
-          {businessDetails.map((detail) => (
+          {businessDetails.map(detail => (
             <li key={detail}>
               <p className='text-xl text-white/80 md:text-2xl'>{detail}</p>
             </li>
@@ -90,7 +98,7 @@ export function ContactDetails() {
           Socials
         </h5>
         <ul className='flex flex-col gap-3'>
-          {socialLinks.map((link) => (
+          {socialLinks.map(link => (
             <li key={link.label}>
               <a
                 href={link.href}

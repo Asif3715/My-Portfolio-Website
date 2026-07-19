@@ -23,7 +23,8 @@ export function StyledComponentsRegistry({ children }) {
     return <>{styles}</>;
   });
 
-  if (typeof window !== 'undefined') return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  if (typeof window !== 'undefined')
+    return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>

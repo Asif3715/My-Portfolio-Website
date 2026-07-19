@@ -3,17 +3,31 @@
 import { motion } from 'framer-motion';
 
 const skills = [
-  'Python', 'PyTorch', 'TensorFlow', 'Scikit-learn',
-  'FastAPI', 'React', 'PostgreSQL', 'Docker',
-  'Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision',
-  'RAG', 'LLMs', 'Data Analytics', 'Power BI',
+  'Python',
+  'PyTorch',
+  'TensorFlow',
+  'Scikit-learn',
+  'FastAPI',
+  'React',
+  'PostgreSQL',
+  'Docker',
+  'Machine Learning',
+  'Deep Learning',
+  'NLP',
+  'Computer Vision',
+  'RAG',
+  'LLMs',
+  'Data Analytics',
+  'Power BI',
 ];
 
 export function Skills() {
   return (
     <section className='overflow-hidden bg-background py-20'>
       <div className='container mx-auto mb-12 px-6'>
-        <h2 className='text-sm uppercase tracking-wider text-muted-foreground'>Tech Stack</h2>
+        <h2 className='text-sm uppercase tracking-wider text-muted-foreground'>
+          Tech Stack
+        </h2>
       </div>
 
       <div className='relative'>

@@ -23,7 +23,8 @@ export function Description() {
         <div className='basis-7/12 lg:basis-3/12'>
           <ParallaxFade>
             <p className='mt-2 text-base text-balance lg:text-lg'>
-              Data Science student at NUST with hands-on experience building ML, NLP, and analytics systems.
+              Data Science student at NUST with hands-on experience building ML,
+              NLP, and analytics systems.
             </p>
           </ParallaxFade>
         </div>

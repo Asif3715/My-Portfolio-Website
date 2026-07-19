@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 import { motion } from 'framer-motion';
 
-
 import { Center } from '@/components';
 import { preloaderWords } from '@/data';
 import { useDimensions, useTimeOut } from '@/hooks';
@@ -59,7 +58,6 @@ export function Preloader({ pathname }) {
             initial='initial'
             animate='enter'
           >
-
             <p>
               {pathname === '/'
                 ? preloaderWords[index]
@@ -67,7 +65,7 @@ export function Preloader({ pathname }) {
                     .split('/')
                     .pop()
                     .replace(/-/g, ' ')
-                    .replace(/\b\w/g, (c) => c.toUpperCase()) || 'Home'}
+                    .replace(/\b\w/g, c => c.toUpperCase()) || 'Home'}
             </p>
           </MotionComponent>
           <motion.svg className='absolute top-0 -z-10 h-[calc(100%+300px)] w-full'>

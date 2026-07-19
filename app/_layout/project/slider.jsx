@@ -15,7 +15,6 @@ export function ProjectSlider({ type, source }) {
         minWidth: '150px',
         height: '20vw',
       }}
-    >
-    </Center>
+    ></Center>
   );
 }

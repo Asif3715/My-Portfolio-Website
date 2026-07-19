@@ -15,44 +15,48 @@ export function ThumbnailList({
   handlePointerLeave,
   moveItems,
 }) {
-  const items = thumbnailOptions.map(({ href, title, category, color }, index) => {
-    const id = index;
-    return (
-      <li
-        key={`thumbnail-list-${id}`}
-        className='border-t border-solid transition-all last-of-type:border-b group-hover:opacity-90'
-        style={{
-          paddingInline: 'calc(clamp(1em,3vw,4em) * 2)',
-          paddingBlock: 'clamp(1em,3vw,4em)',
-        }}
-        onPointerEnter={({ clientX, clientY }) => {
-          handlePointerEnter(id);
-          moveItems(clientX, clientY);
-        }}
-        onPointerLeave={({ clientX, clientY }) => {
-          handlePointerLeave(id);
-          moveItems(clientX, clientY);
-        }}
-      >
-        <Link
-          href={href}
-          target='_blank'
-          rel='noopener'
-          className='flex items-center justify-between max-lg:flex-wrap'
-          passHref
+  const items = thumbnailOptions.map(
+    ({ href, title, category, color }, index) => {
+      const id = index;
+      return (
+        <li
+          key={`thumbnail-list-${id}`}
+          className='border-t border-solid transition-all last-of-type:border-b group-hover:opacity-90'
+          style={{
+            paddingInline: 'calc(clamp(1em,3vw,4em) * 2)',
+            paddingBlock: 'clamp(1em,3vw,4em)',
+          }}
+          onPointerEnter={({ clientX, clientY }) => {
+            handlePointerEnter(id);
+            moveItems(clientX, clientY);
+          }}
+          onPointerLeave={({ clientX, clientY }) => {
+            handlePointerLeave(id);
+            moveItems(clientX, clientY);
+          }}
         >
-          <h4
-            style={{
-              fontSize: 'calc(clamp(3.25em, 7vw, 8em) * 0.75)',
-            }}
+          <Link
+            href={href}
+            target='_blank'
+            rel='noopener'
+            className='flex items-center justify-between max-lg:flex-wrap'
+            passHref
           >
-            {title}
-          </h4>
-          <p className='text-lg font-medium text-muted-foreground'>{category}</p>
-        </Link>
-      </li>
-    );
-  });
+            <h4
+              style={{
+                fontSize: 'calc(clamp(3.25em, 7vw, 8em) * 0.75)',
+              }}
+            >
+              {title}
+            </h4>
+            <p className='text-lg font-medium text-muted-foreground'>
+              {category}
+            </p>
+          </Link>
+        </li>
+      );
+    },
+  );
 
   return <ul className='group'>{items}</ul>;
 }

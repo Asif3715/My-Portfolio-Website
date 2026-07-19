@@ -41,8 +41,6 @@ const experience = [
   },
 ];
 
-
-
 function Marquee() {
   return (
     <div className='relative my-20 flex w-full -rotate-2 scale-110 flex-col items-center overflow-hidden bg-foreground py-12 text-background'>
@@ -255,7 +253,20 @@ export default function About() {
                 variants={slideUpWithOpacity}
                 className='text-xl font-light leading-relaxed text-foreground/80 md:text-2xl md:leading-loose'
               >
-                Beyond academics and technology, I have always been passionate about sports and believe they have played a vital role in shaping my discipline, resilience, and teamwork. I enjoy playing <strong className='font-medium text-foreground'>hockey, football, and squash</strong>, and I actively participated in various athletic events throughout my school years. Outside the field, I enjoy <strong className='font-medium text-foreground'>calligraphy, declamation, reading, and table tennis</strong>. These interests have helped me develop creativity, confidence, and effective communication skills while maintaining a healthy balance between personal growth and professional ambitions.
+                Beyond academics and technology, I have always been passionate
+                about sports and believe they have played a vital role in
+                shaping my discipline, resilience, and teamwork. I enjoy playing{' '}
+                <strong className='font-medium text-foreground'>
+                  hockey, football, and squash
+                </strong>
+                , and I actively participated in various athletic events
+                throughout my school years. Outside the field, I enjoy{' '}
+                <strong className='font-medium text-foreground'>
+                  calligraphy, declamation, reading, and table tennis
+                </strong>
+                . These interests have helped me develop creativity, confidence,
+                and effective communication skills while maintaining a healthy
+                balance between personal growth and professional ambitions.
               </motion.p>
             </div>
           </div>

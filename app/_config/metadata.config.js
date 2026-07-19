@@ -11,9 +11,7 @@ export const rootMetadata = {
   applicationName: 'Asif Khan',
   referrer: 'origin-when-cross-origin',
   keywords: ['Data Science', 'Machine Learning', 'AI', 'NLP', 'Deep Learning'],
-  authors: [
-    { name: 'Asif Khan', url: 'https://github.com/Asif3715' },
-  ],
+  authors: [{ name: 'Asif Khan', url: 'https://github.com/Asif3715' }],
   creator: 'Asif Khan',
   publisher: 'Asif Khan',
   icons: {
