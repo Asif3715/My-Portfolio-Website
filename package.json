@@ -20,7 +20,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint app/ --ext .js,.jsx",
+    "format:check": "prettier --check \"app/**/*.{js,jsx,css}\"",
+    "format": "prettier --write \"app/**/*.{js,jsx,css}\"",
+    "stylelint": "stylelint \"app/**/*.{css,jsx}\" --custom-syntax postcss-styled-syntax"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
